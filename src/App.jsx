@@ -9,7 +9,7 @@ const products = [
   { id: 4, name: 'Street collection', category: 'Sua identidade', price: 'R$ 149,90', image: 'https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=85' }
 ];
 const links = [
-  { title: 'Fale com a gente', detail: 'Atendimento direto pelo WhatsApp', href: 'https://wa.me/5535999999999', icon: MessageCircle },
+  { title: 'Fale com a gente', detail: 'Atendimento direto pelo WhatsApp', href: 'https://wa.me/message/SKZLHBI4MJICA1', icon: MessageCircle },
   { title: 'Como chegar', detail: 'Avenida Dona Floriana, 845 · Centro', href: 'https://www.google.com/maps/search/?api=1&query=Avenida+Dona+Floriana+845', icon: MapPin },
   { title: 'Instagram', detail: '@ferreira.m0das', href: 'https://instagram.com/ferreira.m0das', icon: Instagram }
 ];
@@ -46,7 +46,7 @@ function Storefront() {
     <header className="site-header">
       <a href="#" aria-label="Ferreira Modas início"><Brand/></a>
       <nav><a href="#destaques">Destaques</a><a href="#sobre">A loja</a><a href="#contato">Contato</a></nav>
-      <a className="header-cta" href="https://wa.me/5535999999999">Fale conosco <ArrowUpRight size={15}/></a>
+      <a className="header-cta" href="https://wa.me/message/SKZLHBI4MJICA1">Fale conosco <ArrowUpRight size={15}/></a>
       <button className="mobile-menu" onClick={()=>setMenuOpen(!menuOpen)} aria-label="Abrir menu">{menuOpen?<X/>:<Menu/>}</button>
     </header>
     <AnimatePresence>{menuOpen && <motion.div className="mobile-nav" initial={{height:0,opacity:0}} animate={{height:'auto',opacity:1}} exit={{height:0,opacity:0}}><a href="#destaques" onClick={()=>setMenuOpen(false)}>Destaques</a><a href="#sobre" onClick={()=>setMenuOpen(false)}>A loja</a><a href="#contato" onClick={()=>setMenuOpen(false)}>Contato</a></motion.div>}</AnimatePresence>
@@ -65,7 +65,7 @@ function Storefront() {
         <div className="rail-controls"><button onClick={()=>scroll(-1)} aria-label="Anterior"><ArrowLeft/></button><button onClick={()=>scroll(1)} aria-label="Próximo"><ArrowRight/></button></div>
       </div>
       <div className="product-rail" ref={rail}>{products.map((p,i)=><motion.article className="product-card" key={p.id} initial={{opacity:0,y:22}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*.08}}>
-        <a href="https://wa.me/5535999999999" className="product-image"><img src={p.image} alt={p.name}/>{p.tag&&<span className="product-tag">{p.tag}</span>}<span className="product-arrow"><ArrowUpRight/></span></a>
+        <a href="https://wa.me/message/SKZLHBI4MJICA1" className="product-image"><img src={p.image} alt={p.name}/>{p.tag&&<span className="product-tag">{p.tag}</span>}<span className="product-arrow"><ArrowUpRight/></span></a>
         <div className="product-meta"><div><h3>{p.name}</h3><p>{p.category}</p></div><strong>{p.price}</strong></div>
       </motion.article>)}</div>
       <div className="drag-hint"><span/> ARRASTE PARA EXPLORAR <ArrowRight size={13}/></div>
@@ -73,7 +73,7 @@ function Storefront() {
     <section className="manifesto"><div className="manifesto-mark">FM</div><div className="eyebrow">MAIS QUE SE VESTIR</div><h2>Seu estilo fala.<br/><em>Deixe ele dizer.</em></h2><p>Uma curadoria de moda masculina para quem sabe que os detalhes fazem toda a diferença.</p></section>
     <section className="contact-section" id="contato"><div><div className="eyebrow">ENCONTRE SEU ESTILO</div><h2>Vamos conversar<span>.</span></h2><p>Chama a gente e descubra as novidades da loja.</p></div><div className="contact-links">{links.map(({title,detail,href,icon:Icon})=><a href={href} target="_blank" rel="noreferrer" key={title}><span className="contact-icon"><Icon/></span><span><strong>{title}</strong><small>{detail}</small></span><ArrowUpRight className="contact-arrow"/></a>)}</div></section>
     <footer><Brand compact/><span>© 2026 FERREIRA MODAS · GUAXUPÉ, MG</span><a href="/admin">Acesso administrativo</a></footer>
-    <a className="floating-whatsapp" href="https://wa.me/5535999999999" target="_blank" rel="noreferrer" aria-label="WhatsApp"><MessageCircle/></a>
+    <a className="floating-whatsapp" href="https://wa.me/message/SKZLHBI4MJICA1" target="_blank" rel="noreferrer" aria-label="WhatsApp"><MessageCircle/></a>
   </main>;
 }
 
