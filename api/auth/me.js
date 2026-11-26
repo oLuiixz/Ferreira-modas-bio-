@@ -1,0 +1,2 @@
+import {db,send,requireAdmin} from '../_lib.js';
+export default async function handler(req,res){if(req.method!=='GET')return send(res,405,{error:'Método não permitido'});try{const user=await requireAdmin(req,res);if(!user)return;return send(res,200,{ok:true,email:user.email});}catch(e){console.error(e);return send(res,500,{error:'Falha ao validar sessão'});}}
