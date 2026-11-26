@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-import {db,send,readBody} from '../_lib.js';
+import {db,send,readBody} from '../../lib/server.js';
 export default async function handler(req,res){
  if(req.method!=='POST')return send(res,405,{error:'Método não permitido'});
  try{
