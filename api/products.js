@@ -1,4 +1,4 @@
-import {db,send,readBody,requireAdmin} from './_lib.js';
+import {db,send,readBody,requireAdmin} from '../lib/server.js';
 export default async function handler(req,res){
  try{
   if(req.method==='GET'){const q=await db().query('SELECT id,name,description,category,price_cents,image_url,product_url,is_featured,sort_order,is_active FROM products WHERE is_active=true ORDER BY is_featured DESC,sort_order ASC,created_at DESC');return send(res,200,{products:q.rows});}
