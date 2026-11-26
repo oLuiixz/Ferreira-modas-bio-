@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Instagram, MapPin, Menu, MessageCircle, ShieldCheck, Plus, Trash2, LogOut, X, Pencil, Save } from 'lucide-react';
 
