@@ -1,0 +1,3 @@
+import crypto from 'node:crypto';
+import {db,send,cookie,clearCookie} from '../_lib.js';
+export default async function handler(req,res){if(req.method!=='POST')return send(res,405,{error:'Método não permitido'});try{const token=cookie(req);if(token){const hash=crypto.createHash('sha256').update(token).digest('hex');await db().query('DELETE FROM admin_sessions WHERE token_hash=$1',[hash]);}clearCookie(res);return send(res,200,{ok:true});}catch(e){console.error(e);clearCookie(res);return send(res,200,{ok:true});}}
